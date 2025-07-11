@@ -6,6 +6,19 @@
   <title>Home Page</title>
 </head>
 <body>
+  <nav>
+    <a href="/">Home</a> |
+    <a href="/recipes">Recipes</a> |
+    <a href="/ingredients">Ingredients</a> |
+    <% if (user) { %>
+      Welcome, <%= user.username %> | <a href="/auth/sign-out">Sign out</a>
+    <% } else { %>
+      <a href="/auth/sign-in">Sign in</a> |
+      <a href="/auth/sign-up">Sign up</a>
+    <% } %>
+  </nav>
+  <hr>
+  
   <% if (user) { %>
     <h1>Welcome to the app, <%= user.username %>!</h1>
     <p>
